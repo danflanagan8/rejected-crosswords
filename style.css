@@ -1,0 +1,63 @@
+body {
+   font-size: 12pt;
+   font-family: Calibri, sans-serif;
+   /*background-image: url("backgroundSketch.jpg");
+   background-repeat: no-repeat;
+   background-position: center;*/
+   background-color:#880000
+   
+}
+
+body h1 {
+	font-size: 18pt;
+}
+
+#content {
+   
+   width: 800px;
+   background-color: white;
+   min-height: 100vh;
+   
+   padding-left: 47px;
+   padding-right: 47px;
+   padding-top: 10px;
+   padding-bottom: 30px;
+   
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 0px;
+   margin-bottom: -16px;
+   
+   border-right: solid 1px black;
+   border-left: solid 1px black;
+   
+   
+}
+
+#will {
+	
+}
+
+#after_will{
+
+}
+
+a{
+   text-decoration: none;
+   color: red;
+   font-weight: bold;
+}
+
+a:visited{
+   color: red;
+}
+
+a:hover{
+   color:#880000;
+}
+
+h1 {
+   font-family: Helvetica, sans-serif;
+   /*color: #FF8844;*/
+   color: black;
+}

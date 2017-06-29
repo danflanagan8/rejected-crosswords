@@ -1,0 +1,111 @@
+[
+		{
+			"num": 1,
+			"title": "Rejected May 7, 2015",
+			"blurb": "Our first rejection! Rejection never felt so good.",
+			"blank": "crosswords/crossword1.pdf",
+			"solution": "crosswords/crossword1_solution.pdf",
+			"will": "crosswords/crossword1feedback.jpg",
+			"la": "",
+                        "wsj" : "",
+			"url": "https://crosswordhobbyist.com/73905"
+		}, 
+		
+		{
+			"num": 2,
+			"title": "Twice Rejected",
+			"blurb": "This one also got rejected by the LA Times.",
+			"blank": "crosswords/crossword2.pdf",
+			"solution": "crosswords/crossword2_solution.pdf",
+			"will": "crosswords/crossword2feedback.jpg",
+			"la": "crosswords/crossword2la.jpg",
+                        "wsj" : "",
+			"url": "https://crosswordhobbyist.com/125392"
+		}, 
+		
+		{
+			"num": 3,
+			"title": "Five Vowels",
+			"blurb": "Will did not give five stars to Five Vowels.",
+			"blank": "crosswords/crossword3.pdf",
+			"solution": "crosswords/crossword3_solution.pdf",
+			"will": "crosswords/crossword3feedback.jpg",
+			"la": "crosswords/crossword3la.jpg",
+                        "wsj" : "",
+			"url": "https://crosswordhobbyist.com/74815"
+		}, 
+		
+		{
+			"num": 4,
+			"title": "It Is What It Is",
+			"blurb": "This is the most flattering rejection yet. A step in the right direction perhaps?",
+			"blank": "crosswords/crossword4.pdf",
+			"solution": "crosswords/crossword4_solution.pdf",
+			"will": "crosswords/crossword4feedback.jpg",
+			"la": "",
+                        "wsj" : "",
+			"url": "https://crosswordhobbyist.com/125446"
+		}, 
+		
+		{
+			"num": 5,
+			"title": "Two Contests",
+			"blurb": "I had the exact same reservations about this puzzle as Will had! It is good to be on the same page, even if that page is rejection. The Online Version does not show the circles. Make sure to check out the hard copy link.",
+			"blank": "crosswords/crossword5.pdf",
+			"solution": "crosswords/crossword5_solution.pdf",
+			"will": "crosswords/crossword5feedback.jpg",
+			"la": "",
+                        "wsj" : "",
+			"url": "https://crosswordhobbyist.com/88214"
+		}, 
+		
+		{
+			"num": 6,
+			"title": "Swap Meet",
+			"blurb": "Not a lot of help from Will on this one. I thought this puzzle had exactly the kind of terrible punning that we expect from the Times! LA and WSJ didn't like it either but thankfully gave more thorough critiques.",
+			"blank": "crosswords/crossword6.pdf",
+			"solution": "crosswords/crossword6_solution.pdf",
+			"will": "crosswords/crossword6feedback.jpg",
+			"la": "crosswords/crossword6la.jpg",
+                        "wsj" : "crosswords/crossword6wsj.jpg",
+			"url": "https://crosswordhobbyist.com/114580"
+		},
+
+		{
+			"num": 7,
+			"title": "Near Miss!",
+			"blurb": "A near miss! Holy cow! The critique of this one is way more thorough than any of the others. Pretty neat. I've redacted any of the spoilers on this one so take a look! We're currently waiting on LA to evaluate this one.",
+			"blank": "",
+			"solution": "",
+			"will": "crosswords/crossword7feedback.jpg",
+			"la": "",
+                        "wsj" : "",
+			"url": ""
+		},
+
+		{
+			"num": 8,
+			"title": "Analogies",
+			"blurb": "A new assistant gives us the same old answer. This will go up after the LA Times declines.",
+			"blank": "",
+			"solution": "",
+			"will": "crosswords/crossword8feedback.jpg",
+			"la": "",
+                        "wsj" : "",
+			"url": ""
+		},
+
+		{
+			"num": 9,
+			"title": "Regression",
+			"blurb": "I felt really good about this one. Will did not. Currently being assessed by the LA Times.",
+			"blank": "",
+			"solution": "",
+			"will": "crosswords/crossword9feedback.jpg",
+			"la": "",
+                        "wsj" : "",
+			"url": ""
+		}
+
+
+]
