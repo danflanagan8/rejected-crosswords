@@ -13,7 +13,7 @@ body h1 {
 }
 
 #content {
-   
+   box-sizing: border-box;
    max-width: 800px;
    background-color: white;
    
@@ -24,11 +24,29 @@ body h1 {
    border-right: solid 1px black;
    border-left: solid 1px black;
 
+   min-height: 100vh;
+}
+
+@media( max-width: 900px){
+   #content {
+      max-width: 90%;
+   }
 }
 
 #will {
 	
 }
+
+.critique {
+    padding-left: 20px;
+    border-left: 4px solid black;
+}
+
+a.webapp, a.webapp:visited, a.webapp:hover {
+   color:#4286f4;
+   border-bottom: 2px solid #4286f4;
+}
+
 
 #after_will{
 

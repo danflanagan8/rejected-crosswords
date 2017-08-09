@@ -1,5 +1,8 @@
 <div ng-hide="crossword.selected.url == '' ">
 	<h3>Online Version</h1>
-	<p>Complete the puzzle in your browser. (Embedded from <a href="https://crosswordhobbyist.com" target="_blank">CrosswordHobbyist.com</a>)</p>
-	<iframe ng-src="{{crossword.selected.url}}" width="700" height="600"></iframe>
+	<h4>Option 1: My WebApp</h4>
+	<p>Complete the puzzle in your browser using <a class='webapp' href="/app/?puzzle=r{{crossword.selected.num}}" target="_blank">Dan's Crossword WebApp</a>. It is desktop and iphone friendly. (It probably won't work on Androids.)</p>
+	<h4>Option 1: Crossword Hobbyist</h4>
+	<p>If my webapp doesn't work for you, maybe you'll have more luck
+	<a ng-href="{{crossword.selected.url}}" target="_blank">completing the puzzle at CrosswordHobbyist.com</a></p>
 </div>

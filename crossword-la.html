@@ -2,7 +2,7 @@
 	<h3>LA Times Says...</h1>
 	<p>After Will passed, we sent this to the LA Times. What did they think about this one? <a onclick="$('#la').slideToggle()">Click here!</a> (Spoiler alert!)</p>
 	<div id="la" style="display:none">
-		<img ng-src="{{crossword.selected.la}}"/>
+		<div class='critique' ng-bind-html="crossword.selected.la"></div>
 	</div>
 </div>
 

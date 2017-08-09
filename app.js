@@ -19,6 +19,15 @@
 			rejected.crosswords.forEach( function(entry){
 				entry.url = $sce.trustAsResourceUrl(entry.url);
 			});
+			rejected.crosswords.forEach( function(entry){
+				entry.will = $sce.trustAsHtml(entry.will);
+			});
+			rejected.crosswords.forEach( function(entry){
+				entry.la = $sce.trustAsHtml(entry.la);
+			});
+			rejected.crosswords.forEach( function(entry){
+				entry.wsj = $sce.trustAsHtml(entry.wsj);
+			});
 			
 			//we have the data. We initialize various things now.
 			//initialize

@@ -2,7 +2,7 @@
 	<h3>Will Says...</h1>
 	<p>What did Will Shortz have to say about this one? <a onclick="$('#will').slideToggle()">Click here!</a> (Spoiler alert!)</p>
 	<div id="will" style="display:none">
-		<img ng-src="{{crossword.selected.will}}"/>
+		<div class='critique' ng-bind-html="crossword.selected.will"></div>
 	</div>
 </div>
 
