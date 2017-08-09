@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+   <head>
+      <title>Crossword</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript" src="jquery-1.12.1.js"></script>
+      <script type="text/javascript" src="crossword.js"></script>
+	    <link rel="stylesheet" type="text/css" href="style.css" />
+
+   </head>
+   <body> 
+    
+    <div id="crossword">
+      <div id="about">
+        <h1>Dans' Crossword WebApp</h1>
+        <h2>About</h2>
+        <p>
+          This webapp takes an Across Lite text file and generates a playable crossword puzzle in the browser. You can click on one of the links below to load a rejected puzzle, or you can upload any puzzle you have in the Across Lite format. (Rebus puzzles won't work.)
+        </p>
+        <p>
+          The webapp is intended to be desktop/laptop and iPhone friendly. (It probably doesn't work on Android.)
+        </p>
+        <h2>What a Cool Feature!</h2>
+        <p>
+          An inovative feautre of my webapp is "reference highlighting." When you are working on a clue like "See 28-Down" then 28-Down will get highlighted as well and its clue will be displayed. It doesn't take any additional work from you as long as the reference is made in the conventional way. It even works when a single clue references multiple clues.
+        </p>
+        <h2>Load a Puzzle</h2>
+        <div>Select a crossword puzzle to load. The file must be in the AcrossLite txt format.</div><input type="file" id="fileInput"> 
+
+        <h2>Play a Rejected Puzzle</h2>
+        <ul>
+          <li><a href="?puzzle=r1">First Rejection</a></li>
+          <li><a href="?puzzle=r2">Twice Rejected</a></li>
+          <li><a href="?puzzle=r3">Three Vowels</a></li>
+          <li><a href="?puzzle=r4">It Is What It Is</a></li>
+          <li><a href="?puzzle=r5">Two Contests</a></li>
+          <li><a href="?puzzle=r6">Swap Meet</a></li>
+          <li><a href="?puzzle=r8">Analogies</a></li>
+          <li><a href="?puzzle=r9">Regression</a></li>
+          <li><a href="?puzzle=r10">Haphazard Construction</a></li>
+        </ul>
+      </div>
+    </div>
+     
+   </body>
+</html>
