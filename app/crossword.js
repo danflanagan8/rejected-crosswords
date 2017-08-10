@@ -600,59 +600,41 @@ function updateDisplay( focus, noActive ){
 
 //keyboard event listeners.
 addEventListener("keydown", function(event) {
-	
-	if( event.keyCode == 38 && event.shiftKey){
-		//up and shift
-		event.preventDefault();
-		prevDown();
-	} else if( event.keyCode == 38 ){
+	//for arrows, spacebar, and tab
+	console.log(event.keyCode);
+	if( event.keyCode == 38 ){
 		//up
 		event.preventDefault();
 		move( 0 , -1 );
-	}else if( event.keyCode == 37 && event.shiftKey ){
-		//left and shift
-		event.preventDefault();
-		prevAcross();
 	}else if( event.keyCode == 37 ){
 		//left
 		event.preventDefault();
 		move( -1 , 0 );
-	} else if( event.keyCode == 39 && event.shiftKey ){
-		//right and shift
-		event.preventDefault();
-		nextAcross();
 	}else if( event.keyCode == 39 ){
 		//right
 		event.preventDefault();
 		move( 1 , 0 );
-	} else if( event.keyCode == 40 && event.shiftKey ){
-		//down and shift
-		event.preventDefault();
-		nextDown();
-	} else if( event.keyCode == 40 ){
+	}else if( event.keyCode == 40 ){
 		//down
 		event.preventDefault();
 		move( 0 , 1 );
-	} else if( event.keyCode >= 65 && event.keyCode <= 90 ){
-		//letter key
-		printLetter(String.fromCharCode(event.keyCode));
-	} else if( event.keyCode == 46 || event.keyCode == 8 ){
+	}else if( event.keyCode == 46 || event.keyCode == 8 ){
 		//backspace
 		event.preventDefault();
 		printLetter("");
-	} else if( event.keyCode == 32 )  {
+	}else if( event.keyCode == 32 )  {
 		//spacebar
 		event.preventDefault();
 		rotateHighlight();
-	} else if( event.keyCode == 9 && event.shiftKey ){
-		//tab
+	}else if( event.keyCode == 9 && event.shiftKey ) {
+		//tab and shift
 		event.preventDefault();
 		if( state.orientationAcross ){
 			prevAcross();
 		}else{
 			prevDown();
 		}
-	} else if( event.keyCode == 9 )  {
+	}else if( event.keyCode == 9 )  {
 		//tab
 		event.preventDefault();
 		if( state.orientationAcross ){
@@ -663,6 +645,14 @@ addEventListener("keydown", function(event) {
 	}
 });
 
+addEventListener("keypress", function(event) {
+	//printable characters
+	if( event.which ){
+		//letter key
+		printLetter(String.fromCharCode(event.which));
+	} 
+});
+
 //functions that modify state directly
 function move( right , down ){
 	if( (state.column() + right >= 0) && (state.column() + right < state.crossword.numColumns()) && (state.crossword.getLetter(state.row(), state.column() + right) !== ".") ){
@@ -671,7 +661,7 @@ function move( right , down ){
 	if( (state.row() + down >= 0) && (state.row() + down < state.crossword.numRows()) && state.crossword.getLetter(state.row() + down, state.column()) !== "." ){
 		state.activeSquare = state.crossword.getSquare(state.row() + down, state.column());
 	}
-	updateDisplay();
+	updateDisplay(true);
 }
 
 function nextAcross(){
