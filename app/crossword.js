@@ -649,7 +649,7 @@ addEventListener("keypress", function(event) {
 	//printable characters
 	if( event.which ){
 		//letter key
-		printLetter(String.fromCharCode(event.which));
+		printLetter(String.fromCharCode(event.which).toUpperCase());
 	} 
 });
 
