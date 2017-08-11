@@ -381,8 +381,9 @@ function createMarkup(crossword){
 	var showWrong = "<input type='checkbox' id='show-wrong' name='show-wrong'><label for='show-wrong'>Show Incorrect Letters</label>";
 	var cheat = "<button id='cheat'>Cheat</button>";
 	var giveUp = "<button id='giveup'>Show Solution</button>";
+	var clear = "<button id='clear'>Clear</button>";
 	var showReferences = "<input type='checkbox' checked='checked' id='show-references' name='show-references'><label for='show-references'>Highlight References</label>";
-	$('#buttons').append('<div>' + showWrong + cheat + giveUp + '</div><div>' + showReferences + '</div>');
+	$('#buttons').append('<div>' + showWrong + cheat + giveUp + clear + '</div><div>' + showReferences + '</div>');
 
 	//add the puzzle, but don't fill it yet
 	$('#left').append("<table id='puzzle' class=''></table>");
@@ -496,9 +497,19 @@ function createMarkup(crossword){
 	});
 
 	$('#cheat').click(function(){
-		state.answers[state.row()][state.column()] = state.letter();
-		state.update = {row: state.row(), column: state.column(), letter: state.letter() };
-		updateDisplay(false);
+		printLetter(state.letter());
+	});
+
+	$('#clear').click(function(){
+		if( confirm('Do you really want to clear? This action cannot be undone.')){
+			for(var row = 0; row < state.crossword.numRows(); row++){
+				for( var column = 0 ; column < state.crossword.numColumns(); column++ ){
+					state.answers[row][column] = "";
+				}
+			}
+			localStorage.setItem(state.crossword.title, JSON.stringify(state.answers));
+			loadLocalStorage();
+		}
 	});
 
 	$(document).scroll(function(){
@@ -517,8 +528,27 @@ function createMarkup(crossword){
 		}
 	});
 
+	loadLocalStorage();	
+
 	$(window).resize();
 	updateDisplay(false);
+}
+
+function loadLocalStorage(){
+	if( localStorage.getItem(state.crossword.title) !== null ){
+		state.answers = $.parseJSON(localStorage.getItem(state.crossword.title));
+		for(var row = 0; row < state.crossword.numRows(); row++){
+			for( var column = 0 ; column < state.crossword.numColumns(); column++ ){
+				var $square = $('.square[data-y=' + row + '][data-x=' + column +'] .square-text');
+				$square.text(state.answers[row][column]);
+				if( state.answers[row][column] !== state.crossword.getLetter(row, column) ){
+					$square.addClass('wrong');
+				}else{
+					$square.removeClass('wrong');
+				}
+			}
+		}
+	}
 }
 
 //updateDisplay takes state and re-classes all of the markup based on it.
@@ -601,7 +631,6 @@ function updateDisplay( focus, noActive ){
 //keyboard event listeners.
 addEventListener("keydown", function(event) {
 	//for arrows, spacebar, and tab
-	console.log(event.keyCode);
 	if( event.keyCode == 38 ){
 		//up
 		event.preventDefault();
@@ -649,6 +678,7 @@ addEventListener("keypress", function(event) {
 	//printable characters
 	if( event.which ){
 		//letter key
+		event.preventDefault();
 		printLetter(String.fromCharCode(event.which).toUpperCase());
 	} 
 });
@@ -713,6 +743,10 @@ function rotateHighlight(focus){
 function printLetter(letter){
 	state.answers[state.row()][state.column()] = letter;
 	state.update = {row: state.row(), column: state.column(), letter: letter };
+	
+	//put in local storage
+	localStorage.setItem( state.crossword.title , JSON.stringify(state.answers) );
+
 	if( letter === "" ){
 		retreat();
 	}else{

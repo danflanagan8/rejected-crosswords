@@ -232,6 +232,7 @@ body * {
 }
 button {
 	margin-left: 10px;
+	margin-bottom: 10px;
 	border-radius: none;
 	font-size: 14px;
 }
@@ -240,6 +241,9 @@ button {
 }
 #giveup {
 	background-color: #AAF;
+}
+#clear {
+	background-color: #FFA;
 }
 
 .sticky {
