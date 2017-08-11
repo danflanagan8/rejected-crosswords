@@ -64,6 +64,7 @@ body * {
 	font-family: monospace;
 	text-transform: uppercase;
 	background-color: white;
+	background-clip: padding-box;
 }
 
 .square-text {
