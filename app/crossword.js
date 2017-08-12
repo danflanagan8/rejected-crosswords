@@ -588,7 +588,7 @@ function updateDisplay( focus, noActive ){
 	if( state.orientationAcross ){
 		$("#clue").html("<div class='clue-num'>" + state.activeSquare.acrossNum() + "</div><div class='clue-text'>" + state.activeSquare.acrossText() + "</div>");
 	}else{
-		$("#clue").html("<div class='clue-num'>" + state.activeSquare.acrossNum() + "</div><div class='clue-text'>" + state.activeSquare.downText() + "</div>");
+		$("#clue").html("<div class='clue-num'>" + state.activeSquare.downNum() + "</div><div class='clue-text'>" + state.activeSquare.downText() + "</div>");
 	}
 
 	//add reference if needed
