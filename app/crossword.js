@@ -85,25 +85,9 @@ $(document).ready(function(){
 	//get the file from the query string
 	var query = window.location.search;
 	var fileToLoad = query.substr(8);
+	setUpFileLoader();
 
-	if( fileToLoad == ''){
-		var fileInput = document.getElementById('fileInput');
-		fileInput.addEventListener('change', function(e) { 
-	    	var file = fileInput.files[0];
-	    	var textType = /text.*/;
-	    
-	    	if (file.type.match(textType)) {
-	  			var reader = new FileReader();   
-		  		reader.onload = function(e) {
-		    		//reset state in case it's changed
-		    		var crossword = new Crossword(reader.result);
-		    		state = new Game(crossword);
-		    		createMarkup(state.crossword);
-	  			}
-	  	    	reader.readAsText(file);  
-			} 
-	  	});
-	}else{
+	if( fileToLoad !== ''){
 		//read an across lite text file and convert it into crossword object.
 		//then call the create markup function
 		$.get('lite/' + fileToLoad + '.txt', function(data){
@@ -113,6 +97,154 @@ $(document).ready(function(){
 		});
 	}
 });
+
+function setUpFileLoader(){
+	var fileInput = document.getElementById('fileInput');
+	fileInput.addEventListener('change', function(e) { 
+    	var file = fileInput.files[0];
+    	var textType = /text.*/;
+    	
+    	if (file.type.match(textType) ) {
+  			var reader = new FileReader();   
+	  		reader.onload = function(e) {
+	    		//reset state in case it's changed
+	    		var crossword = new Crossword(reader.result);
+	    		state = new Game(crossword);
+	    		createMarkup(state.crossword);
+  			}
+  	    	reader.readAsText(file);  
+		}else if( file.type.match(/crossword/)){
+			var reader = new FileReader();   
+	  		reader.onload = function(e) {
+	    		var crossword = new Crossword(makeTextFromPuz(ab2arr(reader.result)));
+	    		state = new Game(crossword);
+	    		createMarkup(state.crossword);
+  			}
+  			reader.readAsArrayBuffer(file);
+		}
+  	});
+}
+
+function ab2arr(buf) {
+  return new Uint8Array(buf);
+}
+
+function makeTextFromPuz(data){
+	//data is an array of int values
+
+	//get dimensions as their own variables
+    //These are actual numbers, not representations of chars
+    var rows = data[44];
+    var columns = data[45];
+    var numClues = data[46];
+
+    //all the stuff is text, starting at element 52
+    var arr = [""];
+    var index = 0;
+    for( var i = 52; i < data.length ; i++ ){
+    	if( data[i] === 0 ){
+    		index++;
+    		arr[index] = "";
+    	}else{
+    		arr[index] += String.fromCharCode(data[i]);
+    	}
+    }
+
+    //arr[0] is the grid and title
+    //arr[1] is the author
+    //arr[2] is the year
+    //arr[3] is the first clues
+    //from https://stackoverflow.com/questions/3745666/how-to-convert-from-hex-to-ascii-in-javascript
+    //Function to convert hex to readable characters
+    
+    var clues = arr.slice(3, 3 + numClues);
+
+    //parse the grid
+	function parseGrid(str){
+		var gridWithNewLines = '';
+	    for (var i = 0; i < str.length; i++ ){
+	        gridWithNewLines += str[i];
+	        if( (i+1)%(columns) === 0 && i < 2 * rows * columns){
+	        	gridWithNewLines += "\n";
+	        }
+	    }
+	    return gridWithNewLines;
+	}
+	var grid = parseGrid(arr[0], rows, columns).split("\n");
+	var solution = grid.slice(0, rows);
+	
+	//get the clues in order
+	var down = [];
+	var across = [];
+	function collectClues(){
+		var clueIndex = 0;
+		var clued = false;
+		for( var row = 0; row < rows ; row++ ){
+			for( var col = 0; col < columns ; col++ ){
+				clued = false;
+				if( grid[row][col] != '.'){
+					if( col > 0 && grid[row][col - 1] == '.' ){
+						across.push( clues[clueIndex]);
+						clued = true;
+						clueIndex++;
+					}
+					if( col === 0 ){
+						across.push( clues[clueIndex]);
+						clued = true;
+						clueIndex++;
+					}
+					if( row === 0 ){
+						down.push( clues[clueIndex ]);
+						clued = true;
+						clueIndex++;
+					}
+					if( row > 0 && grid[row - 1][col] == '.' ){
+						down.push( clues[clueIndex]);
+						clued = true;
+						clueIndex++;
+					}
+				}
+			}
+		}
+	}
+	collectClues();
+
+	//we got it all! Put it in a string that looks like the Across Lite Text format.
+	var cr = '<ACROSS PUZZLE>';
+	cr += '\n';
+	cr += '<TITLE>';
+	cr += '\n';
+	cr += grid[grid.length - 1];
+	cr += '\n';
+	cr += '<AUTHOR>';
+	cr += '\n';
+	cr += arr[1];
+	cr += '\n';
+	cr += '<COPYRIGHT>';
+	cr += '\n';
+	cr += arr[2];
+	cr += '\n';
+	cr += '<GRID>';
+	cr += '\n';
+	for( var i = 0; i < solution.length ; i++ ){
+		cr += solution[i];
+		cr += '\n';
+	}
+	cr += '<ACROSS>';
+	cr += '\n';
+	for( var i = 0; i < across.length ; i++ ){
+		cr += across[i];
+		cr += '\n';
+	}
+	cr += '<DOWN>';
+	cr += '\n';
+	for( var i = 0; i < down.length ; i++ ){
+		cr += down[i];
+		cr += '\n';
+	}
+	cr += '<NOTEPAD>';
+	return cr;
+}
 
 function Crossword( text ){
 
@@ -127,7 +259,6 @@ function Crossword( text ){
 
 	//turn the text into an array. Each line is an array item
 	var lite = text.split("\n");
-	
 	//Get the title and author
 	this.title = lite[ lite.indexOf('<TITLE>') + 1];
 	this.author = lite[ lite.indexOf('<AUTHOR>') + 1];
