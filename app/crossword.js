@@ -183,25 +183,34 @@ function makeTextFromPuz(data){
 			for( var col = 0; col < columns ; col++ ){
 				clued = false;
 				if( grid[row][col] != '.'){
+					//a non-black square starts an across clue if there is black or nothing to the left.
+					//a non-black square starts a down clue if there is black or nothing to the right
+
 					if( col > 0 && grid[row][col - 1] == '.' ){
+						//another conditional to guard against for one-letter words
+						if( col < columns - 1 && grid[row][col + 1] !== '.' ){
+							across.push( clues[clueIndex]);
+							clued = true;
+							clueIndex++;
+						}
+					}
+					if( col === 0 && grid[row][col + 1] !== '.'){
 						across.push( clues[clueIndex]);
 						clued = true;
 						clueIndex++;
 					}
-					if( col === 0 ){
-						across.push( clues[clueIndex]);
-						clued = true;
-						clueIndex++;
-					}
-					if( row === 0 ){
+					if( row === 0 && grid[row + 1][col] !== '.'){
 						down.push( clues[clueIndex ]);
 						clued = true;
 						clueIndex++;
 					}
 					if( row > 0 && grid[row - 1][col] == '.' ){
-						down.push( clues[clueIndex]);
-						clued = true;
-						clueIndex++;
+						//another conditional to guard against for one-letter words
+						if( row < rows - 1 && grid[row + 1][col] !== '.' ){
+							down.push( clues[clueIndex]);
+							clued = true;
+							clueIndex++;
+						}
 					}
 				}
 			}
