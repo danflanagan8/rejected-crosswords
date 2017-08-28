@@ -87,8 +87,8 @@
 			"num": 8,
 			"title": "Analogies",
 			"blurb": "The analogies are definitely contrived. Be careful about penciling in ISTO too early. I tried to make that part a little tricky.",
-			"blank": "",
-			"solution": "",
+			"blank": "crosswords/r8.pdf",
+			"solution": "crosswords/r8_solution.pdf",
 			"will": "<p>Hi Dan and Eliza,</p><p>This is David Steinberg writing on behalf of Will.</p><p>Thank you for your two recent submissions, which unfortunately, we have to say no on:</p><p>[Redacted: Critique of Puzzle 9]</p><p>--Analogies 15x:  The analogies felt too contrived to us.</p><p>Sorry for the bad news!  We did appreciate the chance to take a look at these, though.</p>",
 			"la": "<p>Hi Dan, Hi Eliza,</p><p>Thanks for this one, but we'll pass. Rich says it's a creative idea, but there are just so many of these that there's virtually no way to make a tight, distinctive set of them. Rich prefers themes to be more narrowly defined. Even if the set were unified by another common element, it's impossible to do without repeating IS TO between clue and answer, which is something Rich would not allow. It adds up to a no, I'm sorry to say.</p>",
             "wsj" : "<p>ANALOGIES has a group of random analogies—not all within one category—so the theme is too loose.</p>",
@@ -99,8 +99,8 @@
 			"num": 9,
 			"title": "Regression",
 			"blurb": "I felt really good about this one. Will did not. Perhaps this could even be considered a regression.",
-			"blank": "",
-			"solution": "",
+			"blank": "crosswords/r9.pdf",
+			"solution": "crosswords/r9_solution.pdf",
 			"will": "<p>Hi Dan and Eliza,</p><p>This is David Steinberg writing on behalf of Will.</p><p>Thank you for your two recent submissions, which unfortunately, we have to say no on:</p><p>--Step Backwards 15x:  The theme didn't excite Will quite enough for this one to be a yes.</p><p>[Redacted: Critique of Puzzle 8]</p><p>Sorry for the bad news!  We did appreciate the chance to take a look at these, though.</p>",
 			"la": "<p>Hi Dan, Hi Eliza,</p><p>Thanks for this one, but we'll pass. Rich notes that the grid has some nice work, but the theme falls short for him. SECRETARIAT'S DAD is too contrived for his taste, and JAPANESE CAPITAL is what we call \"ordinary language\" -- it's the kind of expression you'd find in ordinary prose but is not a standalone idiom (compare \"pretty dress\" and \"pretty penny\"). Additionally, the reveal idiom is incomplete -- it'd be either ONE step or A step backwards, and while [... with 'a'] is allowed in some clues, Rich wouldn't use it here. It adds up to a no, I'm sorry to say.</p>",
             "wsj" : "<p>REGRESSION would require circles or shading, which we can’t do in our crosswords. Also, SECRETARIAT’S DAD is not an idiomatic phrase.</p>",
@@ -111,12 +111,36 @@
 			"num": 10,
 			"title": "Haphazard Construction",
 			"blurb": "Watch out! This one might be really fun or really awful. You decide! (The reviewers leaned toward the latter.)",
-			"blank": "",
-			"solution": "",
+			"blank": "crosswords/r10.pdf",
+			"solution": "crosswords/r10_solution.pdf",
 			"will": "<p>Hi Dan and Eliza,</p><p>This is David Steinberg writing on behalf of Will.</p><p>Thank you for sending us your Mishaps 15x.  Unfortunately, the theme didn't excite Will quite enough for this one to be a yes.  Our biggest concern was that the theme entries look kind of nonsense-y after the MIS's [sic] are removed.</p><p>Sorry for the bad news!  As always, though, we really appreciated the opportunity to review one of your submissions.</p>",
 			"la": "<p>Hi Dan, Hi Eliza,</p><p>Thanks for this one, but we'll pass. Rich notes that it's a cute idea, but the gimmick results in phrases with nonwords, which is a theme style he never uses. He appreciates the chance to review your work, and is sorry this one won't work out.</p>",
             "wsj" : "<p>HAPHAZARD could work and would feel more clever if there were a cluable phrase created after each HAP was deleted from the original. Right now what’s left is nonsensical and doesn’t seem like much fun.</p>",
 			"url": "https://crosswordhobbyist.com/145353"
+		},
+
+		{
+			"num": 11,
+			"title": "For Completeness: An Interested Rejection",
+			"blurb": "This is the first draft of the puzzle that was later accepted. By far the most detailed feedback I have received. Obviously I can't post the actual puzzle, but the email is pretty cool.",
+			"blank": "",
+			"solution": "",
+			"will": "<p>Hi Dan,</p><p>This is Joel Fagliano, writing on behalf of Will.</p><p>We're interested in your [Redacted theme answer] 15x. It's a nice theme idea.</p><p>However, Will didn't like [Theme answer A] and [Theme answer B] having the same clue conceit. Every example should be different in subject. How about: [Redacted theme answer suggestions]</p><p>They're in ascending numbered order as well as having each one be about a different topic. That feels a bit tighter now.</p><p>If you like this too, feel free to go ahead and construct a new grid and we can move forward here.</p>",
+			"la": "",
+            "wsj" : "",
+			"url": ""
+		},
+
+		{
+			"num": 12,
+			"title": "Writing Letters",
+			"blurb": "How the world of crosswords is cruel! Two days after the New York Times debut comes yet another rejection.",
+			"blank": "",
+			"solution": "",
+			"will": "<p>Hi Dan,</p><p>David Steinberg here, helping Will catch up on correspondence.  Regrets on your [Redacted theme answers] 15x.  We like how you focused the theme to [Redacted theme], but the overall idea didn't excite us quite enough.  [Redacted specific theme answer] is also technically misspelled.</p><p>Very sorry about that.  Congrats on your recent NYT debut, tho!</p>",
+			"la": "",
+            "wsj" : "",
+			"url": ""
 		}
 
 
