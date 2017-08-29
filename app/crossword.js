@@ -134,8 +134,8 @@ function makeTextFromPuz(data){
 
 	//get dimensions as their own variables
     //These are actual numbers, not representations of chars
-    var rows = data[44];
-    var columns = data[45];
+    var columns = data[44];
+    var rows = data[45];
     var numClues = data[46];
 
     //all the stuff is text, starting at element 52
