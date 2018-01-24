@@ -9,8 +9,8 @@
 			"la": "",
             "wsj" : "",
 			"url": "https://crosswordhobbyist.com/73905"
-		}, 
-		
+		},
+
 		{
 			"num": 2,
 			"title": "Twice Rejected",
@@ -21,8 +21,8 @@
 			"la": "<p>Hi Dan, Hi Eliza,</p></p><p>My name is Patti Varol; I am Rich's assistant. Be assured that Rich continues to review, select, and edit every puzzle personally, and I handle some of his research and correspondence so he has more time to work with the puzzles.</p><p>Thanks for sending us your \"Names\" puzzle. Rich notes that there's some nice work in your grid and many of your puns are clever. Unfortunately, we've used this theme before, and Rich would rather not repeat it. We'll pass, I'm sorry to say.</p><p>We're looking forward to seeing more puzzles from you soon. Please continue to use Rich's AOL address for future submissions.</p>",
             "wsj" : "",
 			"url": "https://crosswordhobbyist.com/125392"
-		}, 
-		
+		},
+
 		{
 			"num": 3,
 			"title": "Five Vowels",
@@ -33,8 +33,8 @@
 			"la": "<p>Hi Dan, Hi Eliza,</p><p>Thanks for sending us your \"Five Vowels\" puzzle. Rich notes that your grid has some nice work, and the theme is interesting, but it falls short for him. Rich isn't a big fan of single-word themers, so he feels the first one would be more fun if it were a phrase. Additionally, SNUG MUUMUU is too contrived for his taste. After a search, Rich is sure that there is no 5-U phrase that would fit this size puzzle. We'll have to pass, I'm sorry to say.</p>",
             "wsj" : "",
 			"url": "https://crosswordhobbyist.com/74815"
-		}, 
-		
+		},
+
 		{
 			"num": 4,
 			"title": "It Is What It Is",
@@ -45,8 +45,8 @@
 			"la": "",
             "wsj" : "",
 			"url": "https://crosswordhobbyist.com/125446"
-		}, 
-		
+		},
+
 		{
 			"num": 5,
 			"title": "Two Contests",
@@ -57,8 +57,8 @@
 			"la": "",
             "wsj" : "",
 			"url": "https://crosswordhobbyist.com/88214"
-		}, 
-		
+		},
+
 		{
 			"num": 6,
 			"title": "Swap Meet",
@@ -133,15 +133,25 @@
 
 		{
 			"num": 12,
-			"title": "Writing Letters",
+			"title": "Eliot and Others",
 			"blurb": "How the world of crosswords is cruel! Two days after the New York Times debut comes yet another rejection.",
 			"blank": "",
 			"solution": "",
 			"will": "<p>Hi Dan,</p><p>David Steinberg here, helping Will catch up on correspondence.  Regrets on your [Redacted theme answers] 15x.  We like how you focused the theme to [Redacted theme], but the overall idea didn't excite us quite enough.  [Redacted specific theme answer] is also technically misspelled.</p><p>Very sorry about that.  Congrats on your recent NYT debut, tho!</p>",
 			"la": "",
-            "wsj" : "",
+      "wsj" : "<p>Thanks for showing us [Redacted Title]. For this to work, Mike says there would need to be a stronger tie-in to justify why the [Redacted] is being used. Right now its usage seems too odd and arbitrary.</p>",
+			"url": ""
+		},
+
+		{
+			"num": 13,
+			"title": "Looney Tunes",
+			"blurb": "This one won't be in the Times, but the Wall Street Journal is intrigued.",
+			"blank": "",
+			"solution": "",
+			"will": "<p>Hi Dan,</p><p>This is Sam Ezersky, Will's assistant, writing on his behalf. Thanks for your LOONEY TUNES 15x submission, though unfortunately we're going to have to pass on it. Impressive theme interlock, though the theme itself is a bit too straightforward for our liking, and since all films are very dated, we're worried many younger solvers won't be able to appreciate this. Sorry!</p><p>Appreciate seeing this nonetheless.</p>",
+			"la": "",
+      "wsj" : "<p>Mike likes your idea, but all the titles would need to be complete. The partial [Redacted Entry] is a flaw and the deal breaker.</p><p>If you’d like to re-query us with a possible new set (which could combine some of your current theme entries), we’d be open to considering it. There’s no need to tackle a new grid at this time. Also, while a downward, top-to-bottom crossing theme entry might be elegant, it’s not absolutely necessary.</p><p>Thanks for this effort. We look forward to your suggestions for a revision.</p>",
 			"url": ""
 		}
-
-
 ]
