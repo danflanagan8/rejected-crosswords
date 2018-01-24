@@ -5,53 +5,86 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
    <head>
-      <title>Crossword</title>
+      <title>Crossword App</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script type="text/javascript" src="jquery-1.12.1.js"></script>
       <script type="text/javascript" src="crossword.js"></script>
 	    <link rel="stylesheet" type="text/css" href="style.css" />
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+        ga('create', 'UA-65527616-1', 'auto');
+        ga('send', 'pageview');
+      </script>
    </head>
    <body> 
     
     <div id="crossword">
       <div id="about">
-        <h1>Dan's Crossword WebApp</h1>
-        <h2>About</h2>
-        <p>
-          This webapp takes an Across Lite file (.puz or .txt) and generates a playable crossword puzzle in the browser. You can click on one of the links below to load a rejected puzzle, or you can upload a puzzle you have in an Across Lite format. (Rebus puzzles won't work.)
-        </p>
-        <p>
-          The webapp is intended to be desktop/laptop and iPhone friendly. (It probably doesn't work on Android.)
-        </p>
-        <h2>What a Cool Feature!</h2>
-        <p>
-          My webapp has an innovative feature I call <strong><i>reference highlighting</i></strong>. When you are working on a clue like "See 28-Down" then 28-Down will get highlighted as well and its clue will be displayed. It doesn't take any additional work from you (or the constructor) as long as the reference is made in the conventional way. It even works when a single clue references multiple clues.
-        </p>
-        <h2>Load a Puzzle</h2>
-        <div>Select a crossword puzzle to load from your computer. The file must be an the Across Lite format (.puz or .txt).</div><input type="file" id="fileInput"> 
-
-        <h2>Play a Rejected Puzzle</h2>
-        <ul>
-          <li><a href="?puzzle=r1">First Rejection</a></li>
-          <li><a href="?puzzle=r2">Twice Rejected</a></li>
-          <li><a href="?puzzle=r3">Three Vowels</a></li>
-          <li><a href="?puzzle=r4">It Is What It Is</a></li>
-          <li><a href="?puzzle=r5">Two Contests</a></li>
-          <li><a href="?puzzle=r6">Swap Meet</a></li>
-          <li><a href="?puzzle=r8">Analogies</a></li>
-          <li><a href="?puzzle=r9">Regression</a></li>
-          <li><a href="?puzzle=r10">Haphazard Construction</a></li>
-        </ul>
-
-        <h2>Play a Michigan Puzzle</h2>
-        <ul>
-          <li><a href="?puzzle=a1">Our Very First Puzzle</a></li>
-          <li><a href="?puzzle=a2">Winter Sports</a></li>
-          <li><a href="?puzzle=a4">Patriotic Puzzle</a></li>
-          <li><a href="?puzzle=a5">The Big House</a></li>
-          <li><a href="?puzzle=a6">State Stone</a></li>
-        </ul>
+        <div class="full">
+          <h1>Dan's Crossword WebApp</h1>
+        </div>
+        <div class="row">
+          <div class="cell">
+            <h2>About</h2>
+            <p>
+              This webapp takes an Across Lite file (.puz or .txt) and generates a playable crossword puzzle in the browser. You can click on one of the links below to load a rejected puzzle, or you can upload a puzzle you have in an Across Lite format. (Rebus puzzles likely won't work.)
+            </p>
+            <p>
+              The webapp is intended to be desktop/laptop and iPhone friendly. (It probably doesn't work on other phones.)
+            </p>
+          </div>
+          <div class="cell">
+            <h2>Reference Highlighting</h2>
+            <h4>What a Cool Feature!</h4>
+            <p>
+              My webapp has an innovative feature I call <em>Reference Highlighting</em>. When you are working on a clue like "See 28-Down" then 28-Down will get highlighted as well and its clue will be displayed. It doesn't take any additional work from you (or the constructor) as long as the reference is made in the conventional way. It even works when a single clue references multiple clues.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell" id="load">
+            <h2>Load a Puzzle</h2>
+            <div>Select a crossword puzzle to load from your computer. The file must be in the Across Lite format (.puz or .txt).</div>
+            <input type="file" id="fileInput">
+          </div>
+          <div class="cell">
+            <h2>Play a Rejected Puzzle</h2>
+            <ul>
+              <li><a href="?puzzle=r1">First Rejection</a></li>
+              <li><a href="?puzzle=r2">Twice Rejected</a></li>
+              <li><a href="?puzzle=r3">Three Vowels</a></li>
+              <li><a href="?puzzle=r4">It Is What It Is</a></li>
+              <li><a href="?puzzle=r5">Two Contests</a></li>
+              <li><a href="?puzzle=r6">Swap Meet</a></li>
+              <li><a href="?puzzle=r8">Analogies</a></li>
+              <li><a href="?puzzle=r9">Regression</a></li>
+              <li><a href="?puzzle=r10">Haphazard Construction</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">
+            <h2>Play a Michigan Puzzle</h2>
+            <ul>
+              <li><a href="?puzzle=a1">Our Very First Puzzle</a></li>
+              <li><a href="?puzzle=a2">Winter Sports</a></li>
+              <li><a href="?puzzle=a3">Four Ampers&amp;s</a></li>
+              <li><a href="?puzzle=a4">Patriotic Puzzle</a></li>
+              <li><a href="?puzzle=a5">The Big House</a></li>
+              <li><a href="?puzzle=a6">State Stone</a></li>
+              <li><a href="?puzzle=a7">Wolverine's Colors</a></li>
+              <li><a href="?puzzle=a8">Printmaker Gwen</a></li>
+            </ul>
+          </div>
+          <div class="cell">
+            <h2>Find Other Puzzles</h2>
+            <p>The Across Lite format is used by most puzzle constructors across the Web. Maybe you want to download a <a href="http://www.brendanemmettquigley.com/" target="_blank">Brendan Emmitt Quigley</a> puzzle in the Across Lite format and play it here.</p><p>Remember that other sites aren't going to have <em>Reference Highlighting</em> in their embedded puzzles. This might be an easier place to play.</p>
+          </div>
+        </div>
       </div>
     </div>
      
